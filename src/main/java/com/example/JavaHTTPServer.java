@@ -18,7 +18,7 @@ import java.util.StringTokenizer;
 // Ogni connessione del client sarà gestita da un thread dedicato
 public class JavaHTTPServer implements Runnable{ 
 	
-	static final File WEB_ROOT = new File("./src/main/resources");  //quale file apriamo (es. ./html)
+	static final File WEB_ROOT = new File("./src/main/resource/");  //quale file apriamo (es. ./html)
 	static final String DEFAULT_FILE = "index.html";  //file di default in caso di / da sola
 	static final String FILE_NOT_FOUND = "404.html";  //errore in caso di mancanza del file
 	static final String METHOD_NOT_SUPPORTED = "not_supported.html";  //errore in caso di metodo non supportato
@@ -109,6 +109,8 @@ public class JavaHTTPServer implements Runnable{
 				// GET or HEAD method
 				if (fileRequested.endsWith("/")) {
 					fileRequested += DEFAULT_FILE;
+				}else{
+					
 				}
 				
 				File file = new File(WEB_ROOT, fileRequested);

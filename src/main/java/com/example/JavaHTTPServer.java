@@ -199,6 +199,22 @@ public class JavaHTTPServer implements Runnable {
 	private String getContentType(String fileRequested) {
 		if (fileRequested.endsWith(".htm") || fileRequested.endsWith(".html"))
 			return "text/html";
+		else if(fileRequested.endsWith(".jpg"))
+			return "image/jpg";
+		else if(fileRequested.endsWith(".css"))
+			return "text/css";
+		else if(fileRequested.endsWith(".png"))
+			return "image/png";
+		else if(fileRequested.endsWith(".jpeg"))
+			return "image/jpeg";
+		else if(fileRequested.endsWith(".gif"))
+			return "image/gif";
+		else if(fileRequested.endsWith(".webp"))
+			return "image/webp";
+		else if(fileRequested.endsWith(".js"))
+			return "text/js";
+		else if(fileRequested.endsWith(".ico"))
+			return "image.ico";
 		else
 			return "text/plain";
 	}
